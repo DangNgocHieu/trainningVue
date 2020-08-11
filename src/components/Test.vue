@@ -1,15 +1,19 @@
 <template>
   <div>
-    <input v-model="message" placeholder="Nhập thông điệp" />
-    <button @click="aa">Click me</button>
-    <p>Thông điệp: {{ message }}</p>
+      <p>ádadadas</p>
+      <li v-repeat="user in users">
+        {{ user.name }} - {{ user.email }}
+      </li>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
-      message: ''
+      users: [
+        { name: 'Foo Bar', email: 'foo@bar.com' },
+        { name: 'John Doh', email: 'john@doh.com' }
+      ]
     }
   }
 }
