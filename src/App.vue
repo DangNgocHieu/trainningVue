@@ -1,18 +1,18 @@
-
 <template>
   <div>
     <input v-model="message" placeholder="Nhập thông điệp" />
-    <p>{{item }}</p>
-    <button @click="aa">Submit</button>
+    <p v-for="item in items"  v-bind:key="item" >{{ item }}</p>
+    <button @click="click">Submit</button>
   </div>
 </template>
+/* eslint-disable */
 <script>
 export default {
-  data() {
+  data () {
     return {
       message: '',
-      item :[],
-    };
+      items: []
+    }
   },
   // watch: {
   //   message() {
@@ -20,10 +20,12 @@ export default {
   //   },
   // },
   methods: {
-    aa() {
-      this.item.push(this.message);
-      this.message=""
-    },
-  },
-};
+    click () {
+      this.items.push(this.message)
+      this.message = ' '
+    }
+  }
+}
+
 </script>
+
